@@ -1,0 +1,73 @@
+/* BarraNavegacion.css */
+
+/* Estilo general del navbar */
+.navbar {
+ 
+    height: 114px;
+   
+
+  }
+  
+  /* Estilo para la marca del navbar */
+  .navbar-brand {
+    display: flex;
+    align-items: center;
+  }
+  
+  /* Estilo para el logo dentro del navbar */
+ 
+  
+  /* Estilo para los enlaces del navbar */
+  .navbar-nav .nav-link {
+    color: #333; /* Color del texto de los enlaces */
+    font-weight: 400; /* Peso de la fuente más ligero para un aspecto elegante */
+   margin-left: 30px;
+    
+  }
+  
+  /* Estilo para los enlaces activos */
+  .navbar-nav .nav-link.active {
+    color: #007bff; /* Color azul para el enlace activo */
+    font-weight: 500; /* Peso de la fuente para destacar el enlace activo */
+  }
+  
+  /* Estilo para los dropdowns */
+  .dropdown-menu {
+    border-radius: 0.375rem; /* Bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+  }
+  
+  /* Estilo para los elementos del dropdown */
+  .dropdown-item {
+    color: #333; /* Color del texto de los elementos del dropdown */
+    
+  }
+  
+  /* Estilo para el botón de búsqueda */
+  .btn-outline-success {
+    border-color: #007bff; /* Color del borde del botón */
+    color: #007bff; /* Color del texto del botón */
+    transition: background-color 0.2s, color 0.2s; /* Transición suave para el cambio de color */
+  }
+  
+  /* Estilo para el botón de búsqueda al pasar el ratón */
+  .btn-outline-success:hover {
+    background-color: #007bff; /* Color de fondo del botón al pasar el ratón */
+    color: #ffffff; /* Color del texto del botón al pasar el ratón */
+  }
+  
+  /* Estilo para el botón de búsqueda al hacer clic */
+  .btn-outline-success:focus {
+    box-shadow: 0 0 0 0.2rem rgba(38, 143, 255, 0.5); /* Sombra al hacer clic para mayor enfoque */
+  }
+  
+li{
+  margin-left: 20px;
+}
+  .LogoNav{
+   
+    position: absolute;
+    margin-top: -110px;
+    
+    width: 150px;
+}

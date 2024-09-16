@@ -1,0 +1,89 @@
+/* Carrusel.css */
+
+/* Estilo general del carrusel */
+.carousel {
+  display: flex;
+ margin-top: 100px; 
+  height: 500px;
+
+  overflow: hidden;
+  border-radius: 8px; /* Bordes redondeados */
+}
+
+/* Estilo para las imágenes del carrusel */
+.carousel-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.carousel-item {
+  height: 100%;
+  transition: opacity 0.6s ease-in-out; /* Transición suave */
+}
+
+.carousel-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ajusta la imagen para cubrir el área del carrusel */
+  border-radius: 8px; /* Bordes redondeados en las imágenes */
+}
+
+/* Estilo para los indicadores del carrusel */
+.carousel-indicators {
+  position: absolute;
+  bottom: 10px; /* Ajusta la posición de los indicadores */
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+  padding-left: 0;
+  margin-bottom: 0;
+  list-style: none;
+}
+
+.carousel-indicators li {
+  width: 8px; /* Tamaño más pequeño para los indicadores */
+  height: 8px;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 50%;
+  margin: 0 3px; /* Espaciado reducido entre indicadores */
+  transition: background-color 0.3s ease;
+}
+
+.carousel-indicators .active {
+  background-color: #007bff; /* Color del indicador activo */
+}
+
+/* Estilo para los controles del carrusel */
+.carousel-control-prev,
+.carousel-control-next {
+  width: 4%; /* Reduce el ancho de los controles */
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-color: rgba(0, 0, 0, 0.5); /* Fondo oscuro para mejor visibilidad */
+  border-radius: 50%;
+  width: 24px; /* Tamaño reducido para los iconos */
+  height: 24px;
+  background-size: 50%;
+  background-repeat: no-repeat;
+}
+
+.carousel-control-prev-icon {
+  background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAiIGhlaWdodD0iMTAwIj4KPHBhdGggZD0iTTEwLDEwSDEwVjkwSDEwVjEwSDEwVjEwSDEwSDEwSDEwSDEwSDEwSDEwSDEwSDEwSDEwIiBzdHJva2U9IiMwMDdCRjAiIHN0cm9rZS13aWR0aD0iNiIgc3Ryb2tlLWxpbmVjbGFzcz0ibm9uZSIvPjwvc3ZnPg==');
+}
+
+.carousel-control-next-icon {
+  background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAiIGhlaWdodD0iMTAwIj4KPHBhdGggZD0iTTEwLDEwSDEwVjkwSDEwVjEwSDEwVjEwSDEwSDEwSDEwSDEwSDEwSDEwSDEwSDEwIiBzdHJva2U9IiMwMDdCRjAiIHN0cm9rZS13aWR0aD0iNiIgc3Ryb2tlLWxpbmVjbGFzcz0ibm9uZSIvPjwvc3ZnPg==');
+}
+
+/* Estilo para la visibilidad del texto en los controles */
+.carousel-control-prev span,
+.carousel-control-next span {
+  background-color: rgba(255, 255, 255, 0.5); /* Fondo blanco semi-transparente para mejor visibilidad */
+  border-radius: 50%;
+}
+
+
