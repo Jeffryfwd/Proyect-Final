@@ -49,10 +49,10 @@ function BarraNavegacion() {
                   Productos
                 </a>
                 <ul className="dropdown-menu">
-                  <li><a className="dropdown-item" href="#"></a></li>
-                  <li><a className="dropdown-item" href="#">Another action</a></li>
-                  <li><hr className="dropdown-divider" /></li>
-                  <li><a className="dropdown-item" href="#">Something else here</a></li>
+                  <li><Link className="dropdown-item" to="fertilizante">fertilizantes</Link></li>
+                  <li><Link className="dropdown-item" to="/abonos">Abonos</Link></li>
+                  
+                  <li><a className="dropdown-item" href="#">Herramienta </a></li>
                 </ul>
               </li> 
               <li className="nav-item">

@@ -36,7 +36,7 @@ function NavAdmin() {
                 <Link className="nav-link" to="/admin" >Creacion de Productos</Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" to="#" >Edicion de Productos</Link>
+                <Link className="nav-link" to="/admin/edits" >Edicion de Productos</Link>
               </li>
               <li className="nav-item dropdown">
                 <a
@@ -58,7 +58,7 @@ function NavAdmin() {
                 </ul>
               </li> 
               <li className="nav-item">
-                <Link className="nav-link" to='/consultas'>Usuarios</Link>
+                <Link className="nav-link" to='/admin/usuarios'>Usuarios</Link>
               </li>
               <li className="nav-item">
                 <Link className="nav-link" to='/contactos' >Pedidos</Link>

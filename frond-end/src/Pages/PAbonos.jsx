@@ -1,13 +1,13 @@
 import React from 'react'
-import Contactos from '../Components/Contactos'
+import Abonos from '../Components/Abonos'
 import BarraNavegacion from '../Components/BarraNavegacion'
-function Pcontactos() {
+function PAbonos() {
   return (
     <div>
       <BarraNavegacion/>
-      <Contactos/>
+      <Abonos/>
       </div>
   )
 }
 
-export default Pcontactos
+export default PAbonos

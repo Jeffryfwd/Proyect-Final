@@ -1,27 +1,16 @@
 import React, { useEffect, useState } from 'react'
 import PostProduct from '../Services/PostProduct'
 import GetProducts from '../Services/GetProducts'
-import DeleteProducts from '../Services/DeleteProducts'
+
 import {useNavigate} from 'react-router-dom'
 
 function Admin() {
-
- 
-
   const [NombreProducto, setNombre] = useState('')
   const [Descripcion, setDescripcion] = useState('')
   const [Precio, setPrecio] = useState('')
   const [Categoria, setCategoria] = useState('')
   const [ImagenProducto, setImagen] = useState('')
-  const [listaProduct, setListaProduct] = useState([])
-
-  useEffect(() => {
-    async function ObtenerProductos() {
-      const Products = await GetProducts()
-      setListaProduct(Products)
-    }
-    ObtenerProductos()
-  }, [])
+ 
 
   const CargarNombre = (event) => {
     setNombre(event.target.value)
@@ -50,15 +39,7 @@ function Admin() {
     }
   }
 
-  async function EliminarProductos(id) {  
-    await DeleteProducts(id)
-    alert('Se ha elimanado con existo')
 
-    const TareaActualizada= await GetProducts()
-
-    setListaProduct(TareaActualizada)
-    
-  }
 
   const Subirproduct = async (event) => {
     event.preventDefault();
@@ -139,9 +120,9 @@ function Admin() {
             >
               <option value="" disabled>Seleccione la categoria</option>
               <option value="Fertilizante">Fertilizantes</option>
-              <option value="clothing"></option>
-              <option value="home"></option>
-              <option value="toys"></option>
+              <option value="Abono">Abono</option>
+              <option value="Herramientas">Herramienta</option>
+           
             </select>
           </div>
 
@@ -162,28 +143,7 @@ function Admin() {
         </form>
       </div>
 
-      <div className="container mt-4">
-        <h2>Lista de Productos</h2>
-        <div className="row">
-          {listaProduct.map((product) => (
-            <div className="col-md-4 mb-4" key={product.id}>
-              <div className="card">
-                {product.ImagenProducto && (
-                  <img src={product.ImagenProducto} className="card-img-top" alt={product.NombreProducto} />
-                )}
-                <div className="card-body">
-                  <h5 className="card-title">{product.NombreProducto}</h5>
-                  <p className="card-text">{product.Descripcion}</p>
-                  <p className="card-text"><strong>Precio:</strong> ${product.Precio}</p>
-                  <p className="card-text"><strong>Categoria:</strong> {product.Categoria}</p>
-                  <button onClick={()=>EliminarProductos(product.id)}>Eliminar</button>
-                  <button>Editar</button>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
+     
     </div>
   )
 }
