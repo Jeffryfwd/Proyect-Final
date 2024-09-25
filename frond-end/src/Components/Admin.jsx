@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import PostProduct from '../Services/PostProduct'
 import GetProducts from '../Services/GetProducts'
+import { Alert } from 'react-bootstrap'
 
-import {useNavigate} from 'react-router-dom'
 
 function Admin() {
   const [NombreProducto, setNombre] = useState('')
@@ -10,13 +10,13 @@ function Admin() {
   const [Precio, setPrecio] = useState('')
   const [Categoria, setCategoria] = useState('')
   const [ImagenProducto, setImagen] = useState('')
- 
+ const [alert, setAlert]= useState({show: false, message: '', variant: ''})
 
   const CargarNombre = (event) => {
     setNombre(event.target.value)
   }
 
-  const CargarDescripcion = (event) => {
+  const CargarDescripcion = (event) => {  
     setDescripcion(event.target.value)
   }
 
@@ -27,6 +27,15 @@ function Admin() {
   const CargarCategoria = (event) => {
     setCategoria(event.target.value)
   }
+
+  async function BuscarProducto() {
+    const Productos = await GetProducts();
+
+    const ProductosEncontrados = Productos.find((pr)=> pr.NombreProducto=== NombreProducto || pr.Descripcion=== Descripcion || pr.ImagenProducto=== ImagenProducto
+  )
+  return ProductosEncontrados
+  }
+
 
   const CargarImagen = (event) => {
     const file = event.target.files[0];
@@ -44,14 +53,20 @@ function Admin() {
   const Subirproduct = async (event) => {
     event.preventDefault();
     
+    const Resultado = await BuscarProducto();
     const EspaciosVacios= NombreProducto==='' || Descripcion==='' || Precio=== '' || Categoria==='' || ImagenProducto==='';
+   
     if (EspaciosVacios) {
-      alert('Rellene los espacios')
-    }else{
+      return alert('Rellene los espacios')
+    }
+    if (Resultado) {
+       setAlert({show: true, message: 'Producto ya existe'})
+    }
+    else{
       await PostProduct(NombreProducto, Descripcion, Precio, Categoria, ImagenProducto)
-      alert('Producto agregado con exito')
-      const TareaActualizada = await GetProducts();
-      setListaProduct(TareaActualizada);
+    setAlert({show: true, message:'Producto Agregado con exito'})
+     
+
       
       setNombre('');
       setDescripcion('');
@@ -64,6 +79,13 @@ function Admin() {
 
   return (
     <div>
+      <div className=' Alerta'>
+      {alert.show && (
+          <Alert variant={alert.variant} onClose={() => setAlert({ ...alert, show: false })} dismissible>
+            {alert.message}
+          </Alert>
+        )}  
+      </div>
       <div className="container">
         <h1 className="my-4">Crear Producto</h1>
         <form onSubmit={Subirproduct}>
@@ -122,7 +144,8 @@ function Admin() {
               <option value="Fertilizante">Fertilizantes</option>
               <option value="Abono">Abono</option>
               <option value="Herramientas">Herramienta</option>
-           
+              <option value="Promociones">Promociones</option>
+              
             </select>
           </div>
 

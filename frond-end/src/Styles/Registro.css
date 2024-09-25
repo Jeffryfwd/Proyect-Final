@@ -9,6 +9,8 @@
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     border: 1px solid #c0d6c1; /* Borde verde suave */
+    margin-top: 50px;
+    
   }
   
   /* Título del formulario */
@@ -87,4 +89,5 @@
     background-color: #f8d7da; /* Rosa claro */
     color: #721c24; /* Rojo oscuro */
   }
+  
   

@@ -2,17 +2,15 @@ import React from 'react'
 import { useEffect } from 'react';
 import { useState } from 'react'
 import GetProducts from '../Services/GetProducts';
-
 import '../Styles/Fertilizantes.css'
-import Modalpedir from './Modalpedir';
-function Fertilizantes() {
+function Promociones() {
     const [ListaFertilantes, setFertilizantes]= useState([]);
 
     useEffect(()=>{
       async function ObtenerFertrilizantes() {
         const Fertilizantes= await GetProducts();
 
-        setFertilizantes(Fertilizantes.filter((product) => product.Categoria=== 'Fertilizante'))
+        setFertilizantes(Fertilizantes.filter((product) => product.Categoria=== 'Promociones'))
         
       }
         ObtenerFertrilizantes()
@@ -34,9 +32,8 @@ function Fertilizantes() {
                 <p className="product-card-text">{fer.Descripcion}</p>
                 <p className="product-card-text"><strong>Precio:</strong> ₡{fer.Precio}</p>
                 <p className="product-card-text"><strong>Categoria:</strong> {fer.Categoria}</p>
-                <Modalpedir />
+                <button className="product-card-button">Pedir Producto</button>
               </div>
-             
             </div>
           </div>
         ))}
@@ -46,4 +43,4 @@ function Fertilizantes() {
   )
 }
 
-export default Fertilizantes
+export default Promociones

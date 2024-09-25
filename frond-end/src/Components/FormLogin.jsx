@@ -21,26 +21,37 @@ function FormLogin() {
     const Registrados = await GetUsuarios()
 
     const ResultadoUsu = Registrados.find((e)=>
-      e.NombreUsuario===NombreUsuario && e.Contra===Contra
-
+      e.NombreUsuario===NombreUsuario && e.Contra===Contra 
     )
+
+   
+    
     return ResultadoUsu
   }
   const IniciarSe = async (event) => {
     event.preventDefault();
     const Exito = await RevisarUsuarios()
 
+    
+ 
     if (Exito) {
-       localStorage.setItem('Autenticado', 'True')
-       setAlert({ show: true, message: 'Registro existoso', variant: 'success' });
+       localStorage.setItem('Autenticado', 'true')       
+       if (Exito.Contra.includes("admin")) {
+        setAlert({show:true, message:'Bienvenido Adminitrador'})
+        setTimeout(() => {
+          Navigate("/admin");
+        },2500);
+        
+      } else {
+        setAlert({show: true, message: 'Bienvenidos'})
        setTimeout(() => {
-        Navigate('/')
-       }, 2000);
-      
-
-       
-      
-    }else{
+        Navigate("/inicio");
+       }, 2500); 
+        
+      }
+    }
+    
+    else{
       setAlert({ show: true, message: 'Usuario no registrado', variant: 'warning' });
     
     }

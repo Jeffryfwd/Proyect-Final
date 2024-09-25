@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { Alert } from 'react-bootstrap';
 import PostUsuarios from '../Services/PostUsuarios';
 import GetUsuarios from '../Services/GetUsuarios';
+import Fondo from '../Img/Fondo.jpg'
 import '../Styles/Registro.css'
 
 function FormRegistro() {
@@ -48,17 +49,21 @@ function FormRegistro() {
     if (UsuariosExistentes) {
       setAlert({ show: true, message: 'Usuario Registrado anteriormente', variant: 'warning' });
       return;
-    } else {
+    } 
+    
+    else {
       setAlert({ show: true, message: 'Registro exitoso', variant: 'success' });
       setTimeout(() => {
         PostUsuarios(NombreUsuario, ApellidoUsuario, Correo, Contra);
-        navigate('/login');
+        navigate('/');
       }, 2000);
     }
   };
 
   return (
-    <div className='contenedor'>
+    <div className='Body'>
+    <div className='contenedor'  >
+     
       <h2 className='titulo'>Registro</h2>
       <form onSubmit={Registrar} className='formulario'>
         {alert.show && (
@@ -105,6 +110,7 @@ function FormRegistro() {
 
         <button type='submit' className='boton'>Registrarse</button>
       </form>
+    </div>
     </div>
   );
 }

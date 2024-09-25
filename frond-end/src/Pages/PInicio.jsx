@@ -6,8 +6,9 @@ function PInicio() {
   return (
     <div>
         <BarraNavegacion/>
-        <Carrusel/>
+       
         <Inicio/>
+        
         
     </div>
   )

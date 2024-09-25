@@ -64,7 +64,7 @@
   
   /* Botón dentro de la tarjeta de producto */
   .product-card-button {
-    background-color: #00b309; /* Color de fondo del botón */
+    background-color: #022204; /* Color de fondo del botón */
     color: #fff; /* Color del texto del botón */
     border: none;
     border-radius: 5px;
@@ -81,5 +81,15 @@
   }
 
 
-
-  
+.BotonEdit{
+  background-color: transparent;
+ border: none;
+}
+footer{
+  margin-top: 70px;
+}
+.Alerta{
+  max-width: 300px;
+  margin-left: 500px;
+  margin-top: 40px;
+}

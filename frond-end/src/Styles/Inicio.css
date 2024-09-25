@@ -19,9 +19,10 @@
   
   /* Estilo para los enlaces del navbar */
   .navbar-nav .nav-link {
-    color: #333; /* Color del texto de los enlaces */
+    color: #6ba65b; /* Color del texto de los enlaces */
     font-weight: 400; /* Peso de la fuente más ligero para un aspecto elegante */
    margin-left: 30px;
+   
     
   }
   
@@ -63,6 +64,8 @@
   
 li{
   margin-left: 20px;
+  color: #ffffff;
+  font-size: 22px;
 }
   .LogoNav{
    
@@ -71,3 +74,93 @@ li{
     
     width: 150px;
 }
+
+.navbar{
+  padding:20px 10px;
+}
+.text-center {
+  text-align: center;
+}
+
+h2 {
+  margin-bottom: 1rem;
+}
+
+.card {
+  transition: transform 0.2s;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+.Bienvenido{
+  text-align: center;
+  margin-top: 25px;
+  font-size: 20px;
+  padding: 23px;
+  
+
+}
+.Titleinicio{
+  color: #388e3c;
+  font-size: 40px;
+}
+.InicioText{
+  margin-top: 40px;
+
+}
+.TitleDestacados{
+  margin-left: 400px;
+  color: #388e3c;
+  font-size: 20px;
+}
+.col-lg-4 mb-5{
+  
+}
+#Bocachi{
+width: 100%
+}
+
+.card {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-img-top {
+  height: 200px; /* Ajusta esta altura según lo necesites */
+  object-fit: cover; /* Asegura que la imagen cubra todo el espacio sin deformarse */
+}
+
+.card-body {
+  flex-grow: 1; /* Asegura que el cuerpo de la carta ocupe el espacio restante */
+}
+.why-choose-section {
+  margin-bottom: 40px;
+}
+
+.section-title {
+  font-size: 2rem;
+  color: #388e3c;
+}
+
+.sub-title {
+  font-size: 1.5rem;
+  color: #555;
+  margin-top: 20px;
+}
+
+.description {
+  font-size: 1rem;
+  color: #333;
+}
+ footer{
+  display: flex;
+
+ }
+ .header{
+position: absolute;
+    margin-top: -300px;
+  right: 600px;
+
+ }

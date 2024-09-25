@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import GetUsuarios from '../Services/GetUsuarios'
+import { RiDeleteBin5Line } from "react-icons/ri";
+import { CiEdit } from "react-icons/ci";
 
 function UsuariosAdmin() {
 const [ListaUsuario, setListaUsuario]= useState([])
@@ -26,7 +28,7 @@ useEffect(()=>{
                 <th>Nombre de Usuario</th>
                 <th>Apellido</th>
                 <th>Correo</th>
-                <th>Contraseña</th>
+             <th>Accion</th>
             </tr>
         </thead>
         <tbody>
@@ -36,7 +38,9 @@ useEffect(()=>{
                     <td>{usu.NombreUsuario}</td>
                     <td>{usu.ApellidoUsuario}</td>
                     <td>{usu.Correo}</td>
-                    <td>{usu.Contra}</td>
+                    <td><button className='BotonEdit'><RiDeleteBin5Line /></button> <button className='BotonEdit' ><CiEdit /></button></td>
+                   
+                    
                 </tr>
             ))}
         </tbody>

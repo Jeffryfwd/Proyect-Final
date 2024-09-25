@@ -1,15 +1,24 @@
 import React from 'react'
 import 'bootstrap/dist/js/bootstrap.bundle.min'; // Importa Bootstrap JS aquí
-import { Link } from 'react-router-dom'
+import { Link, useNavigate  } from 'react-router-dom'
 import Logo1 from '../Img/Logo1.png'
+import { Button } from 'bootstrap/dist/js/bootstrap.bundle.min';
+
 function NavAdmin() {
+  const navigate = useNavigate(); 
+ 
+  const CerraSesion = ()=>{
+    localStorage.removeItem('Autenticado', 'true')
+    navigate('/')
+  }
+
   return (
     <div>
           <div id="ContenNav">
       <nav  className="navbar navbar-expand-lg bg-body-tertiary">
         <div className="container-fluid">
          
-          <Link className="navbar-brand" to="/">
+          <Link className="navbar-brand" to="/admin">
           <div className='Logo-Nav'>
             <img src={Logo1} alt="Logo" className='LogoNav' />
             </div>
@@ -38,32 +47,14 @@ function NavAdmin() {
               <li className="nav-item">
                 <Link className="nav-link" to="/admin/edits" >Edicion de Productos</Link>
               </li>
-              <li className="nav-item dropdown">
-                <a
-                  className="nav-link dropdown-toggle"
-                  href="#"
-                  role="button"
-                  data-bs-toggle="dropdown"
-                  aria-expanded="false"
-                >
-                  Productos
-                </a>
-                
-                <ul className="dropdown-menu">
-                  
-                  <li><a className="dropdown-item" href="#"></a></li>
-                  <li><a className="dropdown-item" href="#">Another action</a></li>
-                  <li><hr className="dropdown-divider" /></li>
-                  <li><a className="dropdown-item" href="#">Something else here</a></li>
-                </ul>
-              </li> 
+             
               <li className="nav-item">
                 <Link className="nav-link" to='/admin/usuarios'>Usuarios</Link>
               </li>
+            
               <li className="nav-item">
-                <Link className="nav-link" to='/contactos' >Pedidos</Link>
-              </li>
-             
+              <button className="nav-link" onClick={CerraSesion}>Salir</button>
+            </li>
               
              
             </ul>
@@ -82,6 +73,6 @@ function NavAdmin() {
     </div>
     </div>
   )
-}
+};
 
 export default NavAdmin

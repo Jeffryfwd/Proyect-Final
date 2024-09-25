@@ -2,13 +2,15 @@ import React, { useState, useEffect } from 'react';
 import GetProducts from '../Services/GetProducts';
 import DeleteProducts from '../Services/DeleteProducts';
 import PutProductos from '../Services/PutProductos';
-
+import { Alert } from 'react-bootstrap';
 
 function EditsAdmin() {
   const [listaProduct, setListaProduct] = useState([]);
   const [datosModal, setModal] = useState([]);
   const [abrirModal, setAbrirModal] = useState(false);
-
+  const [alert, setAlert]=useState({show: false, message: '', variant:''})
+ 
+  
   const InputImagen = (e) => {
     const file =  e.target.files[0];
     if (file) {
@@ -30,7 +32,7 @@ function EditsAdmin() {
 
   async function EliminarProductos(id) {
     await DeleteProducts(id);
-    alert('Se ha eliminado con éxito');
+    setAlert({show: true, message:'Producto Eliminado con exito'})
     const tareaActualizada = await GetProducts();
     setListaProduct(tareaActualizada);
   }
@@ -45,12 +47,19 @@ function EditsAdmin() {
     await PutProductos(id, NombreProducto, Descripcion, Precio, Categoria, ImagenProducto);
     const productoActualizado = await GetProducts();
     setListaProduct(productoActualizado);
-    alert('Producto actualizado');
+  setAlert({show: true, message: 'Producto Editado con exito'})
     setAbrirModal(false);
   }
 
   return (
     <div>
+      <div className='Alerta'>
+        {alert.show && (
+          <Alert variant={alert.variant} onClose={() => setAlert({ ...alert, show: false })} dismissible>
+            {alert.message}
+          </Alert>
+        )}  
+        </div>
 <div className="container mt-4">
     <h2 className="product-list-title">Lista de Productos</h2>
     <div className="product-list-row" >
@@ -116,13 +125,20 @@ function EditsAdmin() {
                 </div>
                 <div className="mb-3">
                   <label htmlFor="modalCategoria" className="form-label">Categoría</label>
-                  <input
-                    type="text"
+                  <select
+                    type="  "
                     className="form-control"
                     id="modalCategoria"
                     value={datosModal.Categoria || ''}
                     onChange={(e) => setModal({ ...datosModal, Categoria: e.target.value })}
-                  />
+                  >
+                    <option value="" disabled>Seleccione la categoria</option>
+              <option value="Fertilizante">Fertilizantes</option>
+              <option value="Abono">Abono</option>
+              <option value="Herramientas">Herramienta</option>
+              <option value="Promociones">Promociones</option>
+              
+            </select>
                 </div>
                 <div className="mb-3">
                   <label htmlFor="modalImagen" className="form-label">Imagen</label>
