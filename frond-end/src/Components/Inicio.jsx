@@ -72,7 +72,7 @@ En el mundo actual, donde la agricultura enfrenta múltiples desafíos, nuestro 
                 </div>
               </div>
             </div>
-            <div className="col-lg-4 mb-5">
+            <div className="col-lg-4 mb-5" id='inicioCArds'>
               <div className="card h-100 shadow border-0">
                 <img className="card-img-top" src={Tierra} alt="..." />
                 <div className="card-body p-4">
@@ -81,15 +81,7 @@ En el mundo actual, donde la agricultura enfrenta múltiples desafíos, nuestro 
                 </div>
               </div>
             </div>
-            <div className="col-lg-4 mb-5">
-              <div className="card h-100 shadow border-0">
-                <img className="card-img-top" src="https://dummyimage.com/600x350/6c757d/343a40" alt="..." />
-                <div className="card-body p-4">
-                  <h5 className="card-title">Testimonios de Clientes</h5>
-                  <p className="card-text mb-0">Lo que dicen nuestros clientes sobre nuestros productos.</p>
-                </div>
-              </div>
-            </div>
+      
             <div className="why-choose-section">
   <h2 className="section-title">¿Por qué Elegir Nuestros Fertilizantes?</h2>
   <br />

@@ -13,6 +13,7 @@ import PAbonos from '../Pages/PAbonos';
 import ProtectedRoute from '../../ProtectRoute';
 import Ppromociones from '../Pages/Ppromociones';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import ProtectAdmim from '../../ProtectAdmin';
 function Routing() {
   return (
     <Router>
@@ -28,7 +29,7 @@ function Routing() {
 <Route path='/promociones' element={<ProtectedRoute><Ppromociones/></ProtectedRoute>}></Route>
 
 
-<Route path='/admin' element={<Padmin/>}></Route>
+<Route path='/admin' element={<ProtectAdmim ><Padmin/></ProtectAdmim>}></Route>
 <Route path='/admin/edits' element={<PeditsAdmin/>}></Route>
 <Route path='/admin/usuarios' element={<PusuariosAdmin/>}></Route>
 

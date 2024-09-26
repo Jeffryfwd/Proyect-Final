@@ -35,7 +35,7 @@ function FormLogin() {
     
  
     if (Exito) {
-       localStorage.setItem('Autenticado', 'true')       
+       localStorage.setItem('Autenticado', 'admin')       
        if (Exito.Contra.includes("admin")) {
         setAlert({show:true, message:'Bienvenido Adminitrador'})
         setTimeout(() => {
@@ -43,6 +43,7 @@ function FormLogin() {
         },2500);
         
       } else {
+        localStorage.setItem('Autenticado', 'true')    
         setAlert({show: true, message: 'Bienvenidos'})
        setTimeout(() => {
         Navigate("/inicio");

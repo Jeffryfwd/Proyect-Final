@@ -1,5 +1,5 @@
 import React from 'react'
-
+import Quienes from '../Img/Quienes.jpg'
 function QuienesSomos() {
   return (
     <div>
@@ -11,7 +11,7 @@ function QuienesSomos() {
       </p>
       
       <section className="text-center">
-        <img src="https://dummyimage.com/600x400/ced4da/6c757d" alt="Fertilizantes Ericka Barrantes" className="img-fluid mb-4" />
+        <img src={Quienes} alt="Fertilizantes Ericka Barrantes" className="img-fluid mb-4" />
         <p>
           Fundada por Ericka Barrantes Rivas, nuestra empresa se especializa en la producción de fertilizantes de alta calidad, incluyendo
           abonos orgánicos como el bocachi y tierra fermentada. Con más de [X años] de experiencia en el sector, nuestro objetivo es

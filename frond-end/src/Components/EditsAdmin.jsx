@@ -33,8 +33,8 @@ function EditsAdmin() {
   async function EliminarProductos(id) {
     await DeleteProducts(id);
     setAlert({show: true, message:'Producto Eliminado con exito'})
-    const tareaActualizada = await GetProducts();
-    setListaProduct(tareaActualizada);
+    const ProductActualizado = await GetProducts();
+    setListaProduct(ProductActualizado);
   }
 
   function AbrirModal(product) {
