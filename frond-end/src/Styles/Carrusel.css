@@ -1,54 +1,66 @@
-/* Carrusel.css */
-
-/* Estilo general del carrusel */
-.carousel {
-  display: flex;
- margin-top: 100px; 
-  height: 500px;
-
-  overflow: hidden;
-  border-radius: 8px; /* Bordes redondeados */
-}
-
-/* Estilo para las imágenes del carrusel */
+/* Carrusel */
 .carousel-inner {
-  position: relative;
-  width: 100%;
-  height: 100%;
+  max-height: 450px; /* Altura máxima del carrusel */
 }
 
+.carousel-inner img {
+  width: 100%; /* Ajusta el ancho al 100% del contenedor */
+  height: 450px; /* Mantiene la proporción de aspecto */
 
-/* Estilo para los indicadores del carrusel */
-.carousel-indicators {
-  position: absolute;
-  bottom: 10px; /* Ajusta la posición de los indicadores */
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  justify-content: center;
-  padding-left: 0;
-  margin-bottom: 0;
-  list-style: none;
+ 
 }
 
-.carousel-indicators li {
-  width: 8px; /* Tamaño más pequeño para los indicadores */
-  height: 8px;
-  background-color: rgba(0, 0, 0, 0.5);
-  border-radius: 50%;
-  margin: 0 3px; /* Espaciado reducido entre indicadores */
-  transition: background-color 0.3s ease;
+/* Estilo para las tarjetas de productos */
+.card {
+  border: none; /* Elimina el borde predeterminado */
+  transition: transform 0.3s; /* Animación suave al pasar el ratón */
 }
 
-.carousel-indicators .active {
-  background-color: #007bff; /* Color del indicador activo */
+.card:hover {
+  transform: scale(1.05); /* Aumenta ligeramente el tamaño al pasar el ratón */
 }
 
-/* Estilo para los controles del carrusel */
-.carousel-control-prev,
-.carousel-control-next {
-  width: 4%; /* Reduce el ancho de los controles */
+.card-img-top {
+  height: 100px; /* Establece una altura fija para las imágenes de las tarjetas */
+   /* Asegura que la imagen cubra el área de la tarjeta */
 }
 
+/* Sección de testimonio */
+.py-5.bg-light {
+  background-color: #f8f9fa; /* Color de fondo claro para la sección de testimonios */
+}
 
+.fs-4 {
+  font-size: 1.5rem; /* Tamaño de fuente para el testimonio */
+}
 
+/* Estilos generales */
+.Bienvenido {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.Titleinicio {
+  font-size: 2.5rem;
+  color: #388e3c; /* Color verde para el título */
+}
+
+.InicioText {
+  font-size: 1.2rem;
+  color: #6c757d; /* Color gris para el texto */
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+  .Titleinicio {
+      font-size: 2rem; /* Tamaño de fuente más pequeño en pantallas pequeñas */
+  }
+
+  .InicioText {
+      font-size: 1rem; /* Ajusta el tamaño del texto */
+  }
+
+  .card-img-top {
+      height: 1px; /* Altura más pequeña para imágenes de tarjetas en pantallas pequeñas */
+  }
+}

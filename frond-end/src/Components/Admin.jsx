@@ -142,8 +142,8 @@ function Admin() {
             >
               <option value="" disabled>Seleccione la categoria</option>
               <option value="Fertilizante">Fertilizantes</option>
-              <option value="Abono">Abono</option>
-              <option value="Herramientas">Herramienta</option>
+            
+             
               <option value="Promociones">Promociones</option>
               
             </select>

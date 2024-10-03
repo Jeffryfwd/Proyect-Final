@@ -1,5 +1,7 @@
 import React from 'react'
 import emailjs from "@emailjs/browser";
+import Fondo from '../Img/Fondo.jpg'
+import '../Styles/Inicio.css'
 function Contactos() {
   const SendEmail= (event)=>{
     event.preventDefault();
@@ -8,19 +10,21 @@ function Contactos() {
   }
   return (
    <div>
+    
      <div>
-      <section className="py-5">
-        <div className="container px-5">
-          <div className="bg-light rounded-3 py-5 px-4 px-md-5 mb-5">
+      <section className="py-5" >
+        <div className="container px-5" >
+          <div className="bg-light rounded-3 py-5 px-4 px-md-5 mb-5" id='Fondo' 
+          >
             <div className="text-center mb-5">
               <div className="feature bg-primary bg-gradient text-white rounded-3 mb-3">
                 <i className="bi bi-envelope"></i>
               </div>
-              <h1 className="fw-bolder">Ponte en contacto con nosotro</h1>
-              <p className="lead fw-normal text-muted mb-0">Nos encantaria saber de usted</p>
+              <h1  style={{ color: '#ffff' }} className="fw-bolder">Ponte en contacto con nosotro</h1>
+              <p style={{ color:'#ffff'}} className="lead fw-normal text-muted mb-0">Nos encantaria saber de usted</p>
             </div>
             <div className="row gx-5 justify-content-center">
-              <div className="col-lg-8 col-xl-6">
+              <div className="col-lg-8 col-xl-6" >
                 <form onSubmit={SendEmail} id="contactForm" data-sb-form-api-token="API_TOKEN">
                   <div className="form-floating mb-3">
                     <input
@@ -101,7 +105,7 @@ function Contactos() {
                   </div>
 
                   <div className="d-grid">
-                    <button className="btn btn-primary btn-lg" id="submitButton" type="submit">
+                    <button  style={{ backgroundColor: '#388e3c' }} className="btn btn-primary btn-lg" id="submitButton" type="submit">
                       Enviar
                     </button>
                   </div>
@@ -143,22 +147,7 @@ function Contactos() {
         </div>
       </section>
 
-      <footer className="bg-dark py-4 mt-auto">
-        <div className="container px-5">
-          <div className="row align-items-center justify-content-between flex-column flex-sm-row">
-            <div className="col-auto">
-              <div className="small m-0 text-white">Copyright &copy; Your Website 2023</div>
-            </div>
-            <div className="col-auto">
-              <a className="link-light small" href="#!">Privacy</a>
-              <span className="text-white mx-1">&middot;</span>
-              <a className="link-light small" href="#!">Terms</a>
-              <span className="text-white mx-1">&middot;</span>
-              <a className="link-light small" href="#!">Contact</a>
-            </div>
-          </div>
-        </div>
-      </footer>
+     
     </div>  
    </div>
   )

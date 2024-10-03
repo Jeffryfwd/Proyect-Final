@@ -82,7 +82,7 @@ const CerrarSesion = ()=>{
               </Link>
               <ul className="dropdown-menu">
                 <li><Link className="dropdown-item" to="/fertilizante">Fertilizantes</Link></li>
-                <li><Link className="dropdown-item" to="/abonos">Abonos</Link></li>
+               
                 <li><Link className="dropdown-item" to="/promociones">Promociones</Link></li>
               </ul>
             </li>

@@ -1,8 +1,9 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Img1 from '../Img/Img1.webp';
-import img2 from '../Img/img2.webp';
-import Img3 from '../Img/Img3.jpg';
+import Carru1 from '../Img/Carru1.jpg';
+import Carru2 from '../Img/Carru2.jpg';
+import Carru3 from '../Img/Carru3.jpg';
+import Carru5 from '../Img/Carru5.jpg';
 import '../Styles/Carrusel.css';
 
 function Carrusel() {
@@ -12,19 +13,20 @@ function Carrusel() {
         <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" className="active"></li>
         <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"></li>
         <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"></li>
+        <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3"></li>
       </ol>
       <div className="carousel-inner">
         <div className="carousel-item active">
-          <img className="d-block w-100" src={Img1} alt="Primera Imagen" />
+          <img className="d-block w-100" src={Carru1} alt="Primera Imagen" />
         </div>
         <div className="carousel-item">
-          <img className="d-block w-100" src={img2} alt="Segunda Imagen" />
+          <img className="d-block w-100" src={Carru2} alt="Segunda Imagen" />
         </div>
         <div className="carousel-item">
-          <img className="d-block w-100" src={Img3} alt="Tercera Imagen" />
+          <img className="d-block w-100" src={Carru3} alt="Tercera Imagen" />
         </div>
-         <div className="carousel-item">
-          <img className="d-block w-100" src={Img3} alt="Tercera Imagen" />
+        <div className="carousel-item">
+          <img className="d-block w-100" src={Carru5} alt="Cuarta Imagen" />
         </div>
       </div>
       <a className="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-bs-slide="prev">
